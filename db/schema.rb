@@ -17,10 +17,8 @@ ActiveRecord::Schema.define(version: 20150128161934) do
   enable_extension "plpgsql"
 
   create_table "notes", force: :cascade do |t|
-    t.text     "body"
-    t.string   "title"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.text   "body"
+    t.string "title"
   end
 
 end
