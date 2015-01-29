@@ -3,25 +3,26 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :update, :destroy]
 
   def index
-    @notes = Note.all
-    render json: @notes
+    render json: Note.all
   end
 
   def show
-    @note = Note.find(params[:id])
     render json: @note
   end
 
   def create
-    Note.create(note_params)
+    @note = Note.create(note_params)
+    render json: @note
   end
 
   def update
     @note.update(note_params)
+    render json: @note
   end
 
   def destroy
     @note.destroy
+    head :no_content
   end
 
   private
